@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>Titulo: {{ musicTitle }}</div>
+    <div>Autor: {{ musicArtist[0] }}</div> 
+    <div><img src="{{ musicArtist[1] }}">: </div>
+    <div>Link da musica: <a href="{{ musicLink }}">a</a></div>
+
+    <audio controls>
+        <source src="{{ musicPreview }}" type="audio/mpeg">
+        Seu navegador não suporta áudio 😢
+      </audio>
+      <a href="/cadmusica">Ir para a página de cadastro de músicas.</a>
+{% endblock %}

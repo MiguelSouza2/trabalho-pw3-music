@@ -1,0 +1,43 @@
+:root {
+    --bgColor: #181818;
+    --cardColor: #282828;
+    --textColor: #fff;
+    --primaryColor: #1DB954;
+}
+
+body {
+    background-color: var(--bgColor);
+    color: var(--textColor);
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: var(--cardColor) !important;
+}
+
+.navbar-brand, .nav-link {
+    color: var(--textColor) !important;
+}
+
+.card {
+    background-color: var(--cardColor);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--cardColor);
+    color: var(--textColor);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
