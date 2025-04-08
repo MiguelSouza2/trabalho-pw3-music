@@ -1,43 +1,141 @@
-:root {
-    --bgColor: #181818;
-    --cardColor: #282828;
-    --textColor: #fff;
-    --primaryColor: #1DB954;
+
+
+/* Base.html */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background-color: var(--bgColor);
-    color: var(--textColor);
-    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .navbar {
-    background-color: var(--cardColor) !important;
+    background-color: hwb(138 26% 70%);;
 }
 
-.navbar-brand, .nav-link {
-    color: var(--textColor) !important;
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
 }
 
-.card {
-    background-color: var(--cardColor);
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px;
-    text-align: center;
+.nav-link {
+    color: white !important;
+    margin-right: 1rem;
 }
 
-.card img {
-    width: 100%;
-    border-radius: 8px;
+.nav-link:hover {
+    text-decoration: underline;
 }
+
+.form-control {
+    max-width: 300px;
+    border-radius: 20px;
+    border: none;
+    padding-left: 15px;
+}
+
 
 .footer {
+    background-color: hwb(138 26% 70%);
+    color: #fff;
     text-align: center;
-    padding: 10px;
-    background-color: var(--cardColor);
-    color: var(--textColor);
-    position: fixed;
-    bottom: 0;
+    padding: 5px;
     width: 100%;
 }
+
+
+
+/* Index.html */
+.playerMusic {
+    background: linear-gradient(135deg, #3a0ca3, #7209b7, #4361ee);
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical */
+    align-items: center;     /* horizontal */
+    text-align: left;
+    
+}
+
+
+.playerMusic main{
+    width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titleMusic {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.autMusic {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #aaaaaa;
+}
+
+.imgMusic {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.linkMusic {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #000;
+}
+
+.linkMusic a {
+    color: #1DB954;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.linkMusic a:hover {
+    text-decoration: underline;
+}
+
+.playerContainer {
+    background-color: #1e1e1e;
+    border-radius: 20px;
+    padding: 50px 20px;
+    max-width: 400px;
+    ;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+audio {
+    width: 100%;
+    filter: invert(100%) sepia(20%) saturate(500%) hue-rotate(100deg);
+    border-radius: 10px;
+}
+
+
+

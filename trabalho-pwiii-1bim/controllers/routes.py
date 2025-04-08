@@ -3,7 +3,7 @@ from controllers import musicData
 
 
 
-music = musicData.getMusic("era um garoto como eu")
+music = musicData.getMusic("summer")
 musicTitle = music['data'][0]['title']
 musicLink = music['data'][0]['link']
 musicArtist = [
@@ -22,5 +22,12 @@ def init_app(app):
                                musicArtist = musicArtist,
                                musicPreview = musicPreview
                                )
+        
+        
+    @app.route('/artistas')
+    def artistas():
+        return render_template('artistas.html')
+    
+        
     
    
