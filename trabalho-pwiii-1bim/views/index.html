@@ -1,12 +1,99 @@
+<head>
+  <style>
+    .main-content{
+      margin: 0;
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+    /* Sidebar */
+    .sidebar {
+      width: 80px;
+      background-color: #181818;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      gap: 20px;
+      border-right: 2px solid #333;
+    }
+
+    .sidebar button {
+      width: 40px;
+      height: 30px;
+      background-color: #282828;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+
 {% extends 'base.html' %}
 {% block content %}
-    <div>Titulo: {{ musicTitle }}</div>
-    <div>Autor: {{ musicArtist[0] }}</div> 
-    <div><img src="{{ musicArtist[1] }}">: </div>
-    <div>Link da musica: <a href="{{ musicLink }}">a</a></div>
+<main class="main-content">
+  <div class="sidebar">
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+  </div>
+  
+  <div class="main">
+    <div class="section">
+      <h2>Clássica</h2>
+      <div class="card-row">
+        {% for music in popularClassicMusics %}
+          <a class="card" href="#" ><img src="{{music['album']['cover_small']}}" alt="music['album']['title']" style="width: 32px;"><p>{{ music['title'] }}</p></a>
+        {% endfor %}
+      </div>
+    </div>
+    
+  
+    <div class="section">
+      <h2>Rock</h2>
+      <div class="card-row">
+        {% for music in popularRockMusics %}
+          <a class="card" href="#" ><img src="{{music['album']['cover_small']}}" alt="music['album']['title']" style="width: 32px;"><p>{{ music['title'] }}</p></a>
+        {% endfor %}
+      </div>
+    </div>
+  
+    <div class="section">
+      <h2>Forró</h2>
+      <div class="card-row">
+        {% for music in popularForroMusics %}
+          <a class="card" href="#" ><img src="{{music['album']['cover_small']}}" alt="music['album']['title']" style="width: 32px;"><p>{{ music['title'] }}</p></a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 
-    <audio controls>
+  <div id="music">
+    
+  </div>
+  
+</main>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     <audio controls>
         <source src="{{ musicPreview }}" type="audio/mpeg">
         Seu navegador não suporta áudio 😢
-      </audio>
+      </audio> 
+
+
+      <script src="{{url_for('static', filename='script.js')}}"></script>
 {% endblock %}
