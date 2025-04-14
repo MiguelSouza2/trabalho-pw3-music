@@ -9,14 +9,8 @@ userlist = [{
 }]
 playlist = []
 
-music = musicData.getMusic("era um garoto como eu")
-musicTitle = music['data'][0]['title']
-musicLink = music['data'][0]['link']
-musicArtist = [
-    music['data'][0]['artist']['name'],
-    music['data'][0]['artist']['picture']
-]
-musicPreview = music['data'][0]['preview']
+
+
 # cadmusica end
 
 # getmusica
@@ -77,3 +71,48 @@ def init_app(app):
             return redirect(url_for('playlist_view'))
 
         return render_template('playlist.html', playlist=playlist)
+    
+    
+    @app.route('/player', methods=['GET', 'POST'])
+    def player():
+        if request.method == 'POST':
+            selectedMusic = request.form.get('music_id')
+            selectedMusicTitle = request.form.get('music_title')
+
+            if selectedMusic:
+                searchMusic = musicData.getMusic(selectedMusicTitle)
+                
+                
+                musicInfo = {
+                    'title' : searchMusic['data'][0]['title'],
+                    'link' : searchMusic['data'][0]['link'],
+                    'preview' : searchMusic['data'][0]['preview'],
+                    'duration' : searchMusic['data'][0]['duration'],
+                    'artist' : searchMusic['data'][0]['artist'],
+                    'album' : searchMusic['data'][0]['album']
+                }
+                return render_template(
+                    'player.html',
+                    musicInfo=musicInfo
+                )
+                
+    @app.route('/base', methods=['GET', 'POST'])
+    def baseSearch():
+        if request.method == 'POST':
+            search = request.form.get('search')
+            if search:
+                searchMusic = musicData.getMusic(search)
+                musicInfo = {
+                    'title': searchMusic['data'][0]['title'],
+                    'link': searchMusic['data'][0]['link'],
+                    'preview': searchMusic['data'][0]['preview'],
+                    'duration': searchMusic['data'][0]['duration'],
+                    'artist': searchMusic['data'][0]['artist'],
+                    'album': searchMusic['data'][0]['album']
+                }
+                return render_template('player.html', musicInfo=musicInfo)
+        
+        # Se não for POST ou não tiver "search", redireciona pra home por exemplo:
+        return redirect(url_for('home'))
+            
+            

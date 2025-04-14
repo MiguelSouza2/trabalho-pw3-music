@@ -1,6 +1,17 @@
 import requests
 
-
+def getAlbum(id):
+    BASE_URL = "https://api.deezer.com/album/"
+    
+    try:
+        r = requests.get(BASE_URL + id)
+        albumData = r.json()
+        
+        return albumData
+    
+    except Exception as e:
+        print(f"An error occured : {e}")
+    
 
 def getMusic(q):    
     BASE_URL = "https://api.deezer.com/search?q=" 

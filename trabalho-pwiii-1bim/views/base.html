@@ -19,7 +19,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{url_for('home')}}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{url_for('login')}}">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{url_for('playlist_view')}}">Playlist</a></li>
-                    <li class="nav-item"><input type="search" class="form-control" placeholder="O que você quer ouvir?"></li>
+                    <li class="nav-item"><form action="{{url_for('baseSearch')}}" method="post"><input type="search" class="form-control" placeholder="O que você quer ouvir?" name="search"><button>submit</button></form></li>
                 </ul>
             </div>
         </div>

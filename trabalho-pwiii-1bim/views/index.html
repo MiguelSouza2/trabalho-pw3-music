@@ -46,7 +46,16 @@
       <h2>Clássica</h2>
       <div class="card-row">
         {% for music in popularClassicMusics %}
-          <a class="card" href="#" ><img src="{{music['album']['cover_small']}}" alt="music['album']['title']" style="width: 32px;"><p>{{ music['title'] }}</p></a>
+        <form action="{{url_for('player')}}" method="post">
+          <input type="hidden" name="music_title" value="{{ music['title'] }}">
+          <input type="hidden" name="music_id" value="{{ music['album']['id'] }}">
+          <input type="hidden" name="album_cover" value="{{ music['album']['cover_small'] }}">
+          
+          <button type="submit" class="card">
+            <img src="{{ music['album']['cover_small'] }}" alt="{{ music['album']['title'] }}" style="width: 32px;">
+            <p>{{ music['title'] }}</p>
+          </button>
+        </form>
         {% endfor %}
       </div>
     </div>
@@ -56,8 +65,18 @@
       <h2>Rock</h2>
       <div class="card-row">
         {% for music in popularRockMusics %}
-          <a class="card" href="#" ><img src="{{music['album']['cover_small']}}" alt="music['album']['title']" style="width: 32px;"><p>{{ music['title'] }}</p></a>
+        <form action="{{url_for('player')}}" method="post">
+          <input type="hidden" name="music_title" value="{{ music['title'] }}">
+          <input type="hidden" name="music_id" value="{{ music['album']['id'] }}">
+          <input type="hidden" name="album_cover" value="{{ music['album']['cover_small'] }}">
+          
+          <button type="submit" class="card">
+            <img src="{{ music['album']['cover_small'] }}" alt="{{ music['album']['title'] }}" style="width: 32px;">
+            <p>{{ music['title'] }}</p>
+          </button>
+        </form>
         {% endfor %}
+
       </div>
     </div>
   
@@ -65,7 +84,16 @@
       <h2>Forró</h2>
       <div class="card-row">
         {% for music in popularForroMusics %}
-          <a class="card" href="#" ><img src="{{music['album']['cover_small']}}" alt="music['album']['title']" style="width: 32px;"><p>{{ music['title'] }}</p></a>
+        <form action="{{url_for('player')}}" method="post">
+          <input type="hidden" name="music_title" value="{{ music['title'] }}">
+          <input type="hidden" name="music_id" value="{{ music['album']['id'] }}">
+          <input type="hidden" name="album_cover" value="{{ music['album']['cover_small'] }}">
+          
+          <button type="submit" class="card">
+            <img src="{{ music['album']['cover_small'] }}" alt="{{ music['album']['title'] }}" style="width: 32px;">
+            <p>{{ music['title'] }}</p>
+          </button>
+        </form>
         {% endfor %}
       </div>
     </div>
