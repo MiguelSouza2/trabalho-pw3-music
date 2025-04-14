@@ -41,8 +41,8 @@ def init_app(app):
             popularForroMusics=popularForroMusics
         )
 
-    @app.route('/login', methods=['GET', 'POST'])
-    def login():
+    @app.route('/cadastro', methods=['GET', 'POST'])
+    def cadastro():
         if request.method == 'POST':
             if request.form.get('Nome') and request.form.get('email') and request.form.get('Senha'):
                 userlist.append({
@@ -50,8 +50,8 @@ def init_app(app):
                     'email': request.form.get('email'),
                     'Senha': request.form.get('Senha')
                 })
-            return redirect(url_for('login'))
-        return render_template('login.html', userlist=userlist)
+            return redirect(url_for('cadastro'))
+        return render_template('cadastro.html', userlist=userlist)
 
     @app.route('/playlist', methods=['GET', 'POST'])
     def playlist_view():

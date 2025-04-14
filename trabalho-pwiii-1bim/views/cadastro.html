@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuários</title>
+    <!-- Referência ao arquivo CSS -->
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <div class="cadastro">
+        <h2 class="titleUser">Cadastro de Usuários</h2>
+        <hr>
+
+        <!-- Formulário de Cadastro -->
+        <form action="{{ url_for('cadastro') }}" method="POST">
+            <div>
+                <!-- Nome -->
+                <label for="Nome">Nome completo</label>
+                <input
+                    type="text"
+                    name="Nome"
+                    id="Nome"
+                    placeholder="Seu nome completo"
+                    required
+                />
+
+                <!-- Email -->
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="seu.email@exemplo.com"
+                    required
+                />
+
+                <!-- Senha -->
+                <label for="Senha">Senha</label>
+                <input
+                    type="password"
+                    name="Senha"
+                    id="Senha"
+                    placeholder="Mínimo 8 caracteres"
+                    required
+                />
+
+                <!-- Termos de Serviço -->
+                <div class="checkbox-container">
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        name="terms"
+                        required
+                    />
+                    <label for="terms" class="checkbox-label">
+                        Eu concordo com os <a href="https://webcrumbs.cloud/placeholder" style="color: #00b4d8; text-decoration: underline;">termos de serviço</a> e <a href="https://webcrumbs.cloud/placeholder" style="color: #00b4d8; text-decoration: underline;">política de privacidade</a>
+                    </label>
+                </div>
+
+                <!-- Botão de Enviar -->
+                <button type="submit">
+                    Criar conta
+                </button>
+            </div>
+        </form>
+
+        <hr>
+
+        <!-- Lista de Usuários Cadastrados -->
+        <div class="user-list">
+            <h4 class="text-2xl font-semibold text-purple-800">Usuários cadastrados:</h4>
+            {% for user in userlist %}
+            <div class="user-card">
+                <p><strong>Nome:</strong> {{ user.Nome }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <p><strong>Senha:</strong> {{ user.Senha }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock content %}
+</body>
+</html>

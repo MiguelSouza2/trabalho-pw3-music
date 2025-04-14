@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <body>
-  <main>
+  <main class="player">
       <!-- conteúdo da música -->
       <div class="autMusic">Autor: {{ musicInfo['artist']['name'] }}</div> 
       <div class="titleMusic">Titulo: {{ musicInfo['title'] }}</div>
@@ -12,7 +12,7 @@
             <source src="{{ musicInfo['preview'] }}" type="audio/mpeg">
             Seu navegador não suporta áudio 😢
         </audio>
-  </main>
+  </main> 
 
 </body>
 

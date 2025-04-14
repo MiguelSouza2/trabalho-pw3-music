@@ -17,16 +17,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="{{url_for('home')}}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{url_for('login')}}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url_for('cadastro')}}">Cadastro</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{url_for('playlist_view')}}">Playlist</a></li>
                     <li class="nav-item"><form action="{{url_for('baseSearch')}}" method="post"><input type="search" class="form-control" placeholder="O que você quer ouvir?" name="search"><button>submit</button></form></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container mt-4">
+    <section class="">
         {% block content %}{% endblock %}
-    </div>
+    </section>
     <footer class="footer">
         <p>Todos os direitos reservados &copy; 2025</p>
     </footer>

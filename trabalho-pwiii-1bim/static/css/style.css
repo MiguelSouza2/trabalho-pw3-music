@@ -42,3 +42,457 @@ body {
     width: 100%;
 }
 
+/* base.html */
+
+/* Estilo geral */
+body {
+    background-color: #0d1b2a;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #0d1b2a;
+    border-bottom: 1px solid #1b263b;
+}
+
+.navbar-brand,
+.nav-link {
+    color: #ffffff !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.navbar-brand:hover {
+    color: #00b4d8 !important;
+}
+
+/* Formulário de busca na navbar */
+.navbar form {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.navbar input[type="search"] {
+    background-color: #1b263b;
+    border: 1px solid #415a77;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+.navbar button {
+    background-color: #00b4d8;
+    color: #0d1b2a;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 12px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.navbar button:hover {
+    background-color: #90e0ef;
+    color: #0d1b2a;
+}
+
+/* Container principal */
+.container {
+    background-color: #1b263b;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* Footer */
+.footer {
+    background-color: #0d1b2a;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #1b263b;
+    margin-top: 40px;
+}
+
+
+/*  index.html */
+
+/* Main content geral */
+.main-content {
+    margin: 0;
+    background-color: #0d1b2a;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    min-height: 80vh;
+}
+
+/* Sidebar estilizada */
+.sidebar {
+    width: 80px;
+    background-color: #181818;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+    border-right: 2px solid #1b263b;
+}
+
+.sidebar button {
+    width: 40px;
+    height: 30px;
+    background-color: #1b263b;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sidebar button:hover {
+    background-color: #415a77;
+}
+
+/* Área principal de músicas */
+.main {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Seções de gênero */
+.section h2 {
+    font-size: 1.6rem;
+    color: #00b4d8;
+    margin-bottom: 16px;
+}
+
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Cartões de músicas */
+.card {
+    background-color: #1b263b;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    color: #ffffff;
+    width: fit-content;
+}
+
+.card:hover {
+    background-color: #415a77;
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+}
+
+.card p {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Seção futura de player */
+#music {
+    width: 0px; /* ou ajuste depois se quiser exibir um player lateral */
+}
+
+/* player.html */
+/* player.css ou dentro de um <style> em player.html */
+
+.player {
+    background-color: #0d1b2a;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    gap: 20px;
+    text-align: center;
+}
+
+.autMusic,
+.titleMusic,
+.linkMusic {
+    font-size: 1.2rem;
+    background-color: #1b263b;
+    padding: 12px 20px;
+    border-radius: 8px;
+    width: fit-content;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.imgMusic {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    border: 3px solid #00b4d8;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+a {
+    color: #00b4d8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #90e0ef;
+}
+
+audio {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px;
+    outline: none;
+    border-radius: 10px;
+}
+
+
+/* playlist.html */
+
+.playlist-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: linear-gradient(to bottom right, #0d1b2a, #1b263b);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.1);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.playlist-container h1 {
+    font-size: 2.5rem;
+    color: #00b4d8;
+    margin-bottom: 10px;
+}
+
+.playlist-container p {
+    color: #cbd5e1;
+    margin-bottom: 30px;
+}
+
+.form-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #ade8f4;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #415a77;
+    border-radius: 12px;
+    background-color: #1b263b;
+    color: white;
+    font-size: 1rem;
+}
+
+.form-group select option {
+    background-color: #0d1b2a;
+    color: white;
+}
+
+.form-actions {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.form-actions button {
+    background-color: #00b4d8;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-actions button:hover {
+    background-color: #0077b6;
+    transform: translateY(-2px);
+}
+
+.playlist-list {
+    margin-top: 50px;
+    border-top: 1px solid #415a77;
+    padding-top: 30px;
+}
+
+.playlist-list h2 {
+    font-size: 1.8rem;
+    color: #00b4d8;
+    margin-bottom: 20px;
+}
+
+.track {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    padding: 12px 0;
+    border-bottom: 1px solid #1b263b;
+    transition: background-color 0.2s;
+}
+
+.track:hover {
+    background-color: #415a77;
+}
+
+.track span {
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+.genre-badge {
+    padding: 6px 12px;
+    background-color: #00b4d8;
+    color: #0d1b2a;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    justify-self: end;
+}
+
+/* cadastro.html */
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0d1b2a;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container principal */
+.cadastro {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #1b263b;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.1);
+}
+
+/* Título */
+.titleUser {
+    font-size: 2.5rem;
+    color: #00b4d8;
+    margin-bottom: 20px;
+}
+
+/* Linha separadora */
+hr {
+    border-color: #415a77;
+    margin: 30px 0;
+}
+
+/* Rótulos dos campos */
+label {
+    font-size: 1rem;
+    color: #ade8f4;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Inputs de texto e senha */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #415a77;
+    border-radius: 8px;
+    background-color: #1b263b;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Foco nos campos de input */
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #00b4d8;
+    outline: none;
+}
+
+/* Estilo para o checkbox */
+.checkbox-label {
+    font-size: 0.9rem;
+    color: #ade8f4;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-container input {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
+/* Botão de envio */
+button {
+    background: linear-gradient(to right, #00b4d8, #0077b6);
+    color: white;
+    font-size: 1.1rem;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(to right, #0077b6, #00b4d8);
+    transform: translateY(-2px);
+}
+
+/* Lista de usuários */
+.user-list {
+    margin-top: 40px;
+}
+
+/* Cartão de usuário */
+.user-card {
+    background-color: #415a77;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.user-card p {
+    margin: 5px 0;
+}
+
+.user-card strong {
+    color: #00b4d8;
+}
