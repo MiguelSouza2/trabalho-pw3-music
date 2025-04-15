@@ -112,7 +112,7 @@ def init_app(app):
                 }
                 return render_template('player.html', musicInfo=musicInfo)
         
-        # Se não for POST ou não tiver "search", redireciona pra home por exemplo:
+
         return redirect(url_for('home'))
             
             
