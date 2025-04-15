@@ -6,7 +6,7 @@
       <div class="autMusic">Autor: {{ musicInfo['artist']['name'] }}</div> 
       <div class="titleMusic">Titulo: {{ musicInfo['title'] }}</div>
       <div><img src="{{ musicInfo['album']['cover'] }}" class="imgMusic"></div>
-        <div class="linkMusic">Link da música: <a href="{{ musicInfo['link'] }}">a</a></div>
+        <div class="linkMusic">Link da música: <a href="{{ musicInfo['link'] }}" target="_blank">Deezer</a></div>
 
         <audio controls>
             <source src="{{ musicInfo['preview'] }}" type="audio/mpeg">
